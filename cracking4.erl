@@ -11,7 +11,7 @@ findEmptys([], Acc) ->
 findEmptys([H|Tail], Acc) when H =/= 32->
     findEmptys(Tail, [H|Acc]);
 
-findEmptys([H|Tail], Acc) ->
+findEmptys([H|Tail], Acc) when H =:= 32 ->
     findEmptys(Tail, ["%20"|Acc]).
 
 foo([H|T]) ->
